@@ -59,13 +59,14 @@
 </head>
 <body>
     <header>
-        <h1>DeepSeek AIGC使用指南</h1>
+        <h1>DeepSeek AIGC入门指南</h1>
         <p>未来已至，勇者先行；</p>
         <nav>
             <a href="#overview">概述</a>
             <a href="#installation">安装</a>
             <a href="#configuration">配置</a>
             <a href="#usage">使用</a>
+            <a href="#tips">技巧</a>
             <a href="#faq">常见问题</a>
         </nav>
     </header>
@@ -88,7 +89,16 @@
             <ul>
                 <li>Visual Studio Code 1.60.0 或更高版本</li>
                 <li>稳定的网络连接</li>
-                <li>DeepSeek API账号（<a href="https://platform.deepseek.com" target="_blank">注册地址</a>）</li>
+                <li>DeepSeek API账号：
+                    <ol>
+                        <li>访问<a href="https://platform.deepseek.com" target="_blank">DeepSeek官网</a></li>
+                        <li>注册新账号或登录已有账号</li>
+                        <li>进入"API Keys"页面</li>
+                        <li>点击"Create new API key"</li>
+                        <li>复制生成的API密钥</li>
+                        <li>妥善保存密钥（密钥仅显示一次）</li>
+                    </ol>
+                </li>
             </ul>
             <h3>安装步骤</h3>
             <ol>
@@ -164,6 +174,48 @@
             </ul>
         </section>
 
+        <section id="tips" class="section">
+            <h2>使用技巧</h2>
+            <h3>提高效率的技巧</h3>
+            <ul>
+                <li>需求描述技巧：
+                    <ul>
+                        <li>使用"COSTAR"结构描述需求</li>
+                        <li>提供示例或参考代码</li>
+                        <li>分步骤描述复杂需求</li>
+                    </ul>
+                    <div class="image-placeholder" data-src="images/requirement-description.png">
+                        <p>图3：需求描述示例</p>
+                    </div>
+                </li>
+                <li>使用模板：
+                    <ul>
+                        <li>创建常用代码模板，快速生成基础结构</li>
+                        <li>使用`.clinetemplate`文件定义模板</li>
+                    </ul>
+                </li>
+                <li>上下文利用：
+                    <ul>
+                        <li>保持相关文件打开，提供更准确的上下文</li>
+                        <li>在注释中描述整体项目结构</li>
+                    </ul>
+                </li>
+                <li>快捷键：
+                    <ul>
+                        <li>Ctrl+Shift+G：快速生成代码</li>
+                        <li>Ctrl+Space：触发智能补全</li>
+                        <li>Alt+O：优化选中代码</li>
+                    </ul>
+                </li>
+                <li>调试技巧：
+                    <ul>
+                        <li>使用"Explain Code"功能理解复杂代码</li>
+                        <li>生成单元测试代码，提高代码质量</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
         <section id="faq" class="section">
             <h2>常见问题</h2>
             <div class="faq-item">
@@ -178,15 +230,13 @@
                         <li>检查网络连接是否正常</li>
                         <li>确保使用有效的邮箱地址</li>
                         <li>查看垃圾邮件文件夹，确认是否收到验证邮件</li>
-                        <li>使用第三方部署了deepseek的服务器的api，如：SILICONFLOW</li>
-                            </ul>
-                        </li>
+                        <li>使用第三方deepseek的服务器的api，如：<a href="https://cloud.siliconflow.cn/i/vqWvPZB3" target="_blank">SILICONFLOW</a></li>
                     </ul>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="question">如何获取API密钥？</div>
-                <div class="answer">访问DeepSeek官网，注册账号并创建API密钥。新用户可获得免费额度。</div>
+                <div class="answer">访问DeepSeek官网，注册账号并创建API密钥。2025/2/8 前的新用户可获得免费额度。</div>
             </div>
             <div class="faq-item">
                 <div class="question">支持哪些编程语言？</div>
