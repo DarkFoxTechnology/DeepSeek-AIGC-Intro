@@ -93,19 +93,17 @@ nav a:hover {
 
 /* 图片占位符 */
 .image-placeholder {
-    min-height: 200px;
-    background: var(--bg-color);
-    border: 1px dashed #ccc;
-    padding: 20px;
-    text-align: center;
-    margin: 20px 0;
+    max-width: 80%;
+    margin: 10px auto;
+    overflow: hidden;
     border-radius: 8px;
-    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.image-placeholder:hover {
-    border-color: var(--primary-color);
-    background: var(--hover-color);
+.image-placeholder img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* FAQ样式 */
@@ -208,4 +206,234 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* 进阶教程箭头 */
+.advance-arrow {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary-color);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.arrow-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.arrow-icon {
+    font-size: 1.5em;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.arrow-text {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.advance-arrow:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.advance-arrow:hover .arrow-icon {
+    transform: translateX(5px);
+}
+
+@media (max-width: 768px) {
+    .advance-arrow {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 0.9em;
+    }
+}
+
+/* 进阶页面样式 */
+.advanced-tip {
+    background: #f8f9fa;
+    border-left: 4px solid var(--primary-color);
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.code-sample {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 15px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.warning {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 10px;
+    margin: 15px 0;
+}
+
+.flowchart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.node {
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.cluster {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.bordered {
+    border: 1px solid var(--border-color);
+    width: 100%;
+}
+
+.bordered th, .bordered td {
+    padding: 10px;
+    text-align: left;
+}
+
+.metrics {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.metric {
+    text-align: center;
+    padding: 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+.value {
+    font-size: 2em;
+    color: var(--primary-color);
+}
+
+/* 新增架构图样式 */
+.architecture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.layer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.metric.large {
+    padding: 25px;
+    min-width: 180px;
+}
+
+.metric.large .value {
+    font-size: 2.5em;
+}
+
+/* 安全模块样式 */
+.safety-rules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* 返回箭头 */
+.return-arrow {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: #666;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.return-arrow:hover {
+    background: #444;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.return-arrow:hover .arrow-icon {
+    transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+    .return-arrow {
+        bottom: 20px;
+        left: 20px;
+        padding: 12px 20px;
+        font-size: 0.9em;
+    }
+    
+    /* 移动端错开两个箭头的位置 */
+    .advance-arrow {
+        bottom: 80px;
+    }
+}
+
+/* Logo样式 */
+.footer-logo {
+    margin-bottom: 20px;
+    text-align: center;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.footer-logo img {
+    max-width: 200px;
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.footer-logo:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .footer-logo img {
+        max-width: 150px;
+    }
 } 

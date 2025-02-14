@@ -59,7 +59,7 @@
 </head>
 <body>
     <header>
-        <h1>DeepSeek AIGC入门指南</h1>
+        <h1>DeepSeek AIGC快速入门指南</h1>
         <p>未来已至，勇者先行；</p>
         <nav>
             <a href="#overview">概述</a>
@@ -104,7 +104,7 @@
             <ol>
                 <li>打开Visual Studio Code</li>
                 <li>进入扩展市场（Ctrl+Shift+X）</li>
-                <li>搜索"DeepSeek"插件</li>
+                <li>搜索"Cline"插件</li>
                 <li>点击安装按钮</li>
                 <li>等待安装完成</li>
             </ol>
@@ -253,13 +253,62 @@
                     </ul>
                 </div>
             </div>
+            <div class="faq-item">
+                <div class="question">如何配置第三方API服务？</div>
+                <div class="answer">
+                    <p>若需要使用第三方API服务（如SILICONFLOW），请按以下步骤操作：</p>
+                    <ol>
+                        <li>访问第三方服务网站获取API密钥：<a href="https://cloud.siliconflow.cn/i/vqWvPZB3" target="_blank">SILICONFLOW控制台</a>
+                            <div class="image-placeholder" data-src="images/third-party-step1.png">
+                                <p>图4：第三方服务控制台界面（推荐尺寸：800×450px）</p>
+                            </div>
+                        </li>
+                        
+                        <li>在VSCode设置中定位到Cline配置项
+
+
+                        </li>
+
+                        <li>修改API端点地址为第三方提供的URL
+
+                            </div>
+                        </li>
+
+                        <li>在API密钥栏输入第三方提供的密钥
+                            <div class="image-placeholder" data-src="images/third-party-step2.png">
+                                <p>图7：API密钥输入位置</p>
+                            </div>
+                        </li>
+
+                        <li>保存设置后重启生效
+                            <div class="image-placeholder" data-src="images/third-party-step5.png">
+                                <p>图8：配置完成提示</p>
+                            </div>
+                        </li>
+                    </ol>
+                    <p>注意：不同第三方服务商的API兼容性和计费方式可能不同，请仔细阅读服务商文档</p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2025 DeepSeek AI编程助手. All Rights Reserved.</p>
+        <div class="footer-logo">
+            <a href="https://darkfox.top">
+                <img src="images/logo.png" alt="DarkFox Tech Logo">
+            </a>
+        </div>
+        <p>© 2025 DarkFox Tech. All Rights Reserved.</p>
         <p>官方文档：<a href="https://docs.deepseek.com" target="_blank">https://docs.deepseek.com</a></p>
     </footer>
+
+    <!-- 新增进阶教程箭头 -->
+    <a href="advanced.html" class="advance-arrow">
+        <div class="arrow-content">
+            <span class="arrow-icon">→</span>
+            <span class="arrow-text">进阶教程</span>
+        </div>
+    </a>
 
     <script src="script.js"></script>
 </body>

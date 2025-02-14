@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek AIGC 进阶指南</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>DeepSeek AIGC 大师之路</h1>
+        <p>解锁AI编程的无限可能</p>
+        <nav>
+
+            <a href="#workflow">工作流集成</a>
+            <a href="#security">安全合规</a>
+            <a href="#customization">深度定制</a>
+            <a href="#optimization">性能优化</a>
+            <a href="#monitoring">监控调试</a>
+            <a href="#case">实战案例</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="workflow" class="section">
+            <h2>工业级工作流集成</h2>
+            <article class="advanced-tip">
+                <h3>CI/CD 流水线集成</h3>
+                <p>将AIGC代码生成融入持续集成系统：</p>
+                <div class="code-sample">
+                    <pre><code># .gitlab-ci.yml 示例
+aigc_stage:
+  image: deepseek/aigc-runner:latest
+  script:
+    - aigc generate --prompt "生成单元测试用例" --input src/ --output tests/
+    - pytest tests/</code></pre>
+                </div>
+                <div class="warning">
+                    <strong>注意：</strong>建议在代码审查阶段加入人工验证环节
+                </div>
+            </article>
+
+            <article class="advanced-tip">
+                <h3>多模型协同工作</h3>
+                <div class="flowchart">
+                    <div class="node">用户输入</div>
+                    <div class="arrow">↓</div>
+                    <div class="node">DeepSeek 解析</div>
+                    <div class="arrow">↓</div>
+                    <div class="node cluster">
+                        <div>代码生成模型</div>
+                        <div>文档生成模型</div>
+                        <div>测试用例模型</div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="advanced-tip">
+                <h3>分布式部署架构</h3>
+                <div class="architecture">
+                    <div class="layer">
+                        <div class="node">负载均衡器</div>
+                        <div class="arrow">↓</div>
+                        <div class="cluster">
+                            <div class="node">API节点 ×3</div>
+                            <div class="node">模型节点 ×5</div>
+                        </div>
+                    </div>
+                    <div class="layer">
+                        <div class="arrow">↓</div>
+                        <div class="node cluster">
+                            <div>Redis缓存集群</div>
+                            <div>PostgreSQL数据库</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section id="customization" class="section">
+            <h2>深度定制化配置</h2>
+            <article>
+                <h3>自定义模板引擎</h3>
+                <p>创建.clinetemplate文件实现领域特定代码生成：</p>
+                <div class="code-sample">
+                    <pre><code>&lt;template lang="python"&gt;
+# {description}
+def {function_name}({params}):
+    """{docstring}"""
+    {body}
+&lt;/template&gt;</code></pre>
+                </div>
+            </article>
+        </section>
+
+        <section id="optimization" class="section">
+            <h2>性能优化策略</h2>
+            <div class="columns">
+                <div class="col">
+                    <h3>缓存策略</h3>
+                    <ul>
+                        <li>本地结果缓存</li>
+                        <li>分布式缓存集群</li>
+                        <li>语义哈希索引</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>流量控制</h3>
+                    <table class="bordered">
+                        <tr>
+                            <th>层级</th>
+                            <th>策略</th>
+                        </tr>
+                        <tr>
+                            <td>用户级</td>
+                            <td>令牌桶算法</td>
+                        </tr>
+                        <tr>
+                            <td>项目级</td>
+                            <td>优先级队列</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="case" class="section">
+            <h2>实战案例库</h2>
+            <div class="case-study">
+                <h3>案例1：自动化测试生成</h3>
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="value">78%</div>
+                        <div class="label">覆盖率提升</div>
+                    </div>
+                    <div class="metric">
+                        <div class="value">2.5x</div>
+                        <div class="label">效率提升</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="security" class="section">
+            <h2>安全与合规</h2>
+            <article class="advanced-tip">
+                <h3>敏感信息处理</h3>
+                <div class="columns">
+                    <div class="col">
+                        <h4>输入过滤规则</h4>
+                        <pre><code>// 安全过滤示例
+function sanitizeInput(prompt) {
+    return prompt.replace(/(?:身份证|密码|密钥)/g, '****')
+}</code></pre>
+                    </div>
+                    <div class="col">
+                        <h4>审计日志配置</h4>
+                        <table class="bordered">
+                            <tr><th>日志类型</th><th>保留周期</th></tr>
+                            <tr><td>API请求</td><td>180天</td></tr>
+                            <tr><td>代码生成</td><td>90天</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="advanced-tip">
+                <h3>合规性检查</h3>
+                <div class="flowchart">
+                    <div class="node">生成请求</div>
+                    <div class="arrow">↓</div>
+                    <div class="node cluster">
+                        <div>许可证检查</div>
+                        <div>数据隐私检查</div>
+                        <div>安全策略检查</div>
+                    </div>
+                    <div class="arrow">↓</div>
+                    <div class="node">生成执行</div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <a href="https://darkfox.top">
+                <img src="images/logo.png" alt="DarkFox Tech Logo">
+            </a>
+        </div>
+        <p>© ❤2025 DarkFox Tech❤. All Rights Reserved.</p>
+    </footer>
+
+    <!-- 返回箭头 -->
+    <a href="index.html" class="return-arrow">
+        <div class="arrow-content">
+            <span class="arrow-icon">←</span>
+            <span class="arrow-text">返回入门指南</span>
+        </div>
+    </a>
+</body>
+</html>
