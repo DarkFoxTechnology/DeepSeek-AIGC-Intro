@@ -126,19 +126,139 @@ def {function_name}({params}):
 
         <section id="case" class="section">
             <h2>实战案例库</h2>
-            <div class="case-study">
-                <h3>案例1：自动化测试生成</h3>
-                <div class="metrics">
-                    <div class="metric">
-                        <div class="value">78%</div>
-                        <div class="label">覆盖率提升</div>
+
+            <!-- 案例1：自动化测试生成 -->
+            <article class="case-study">
+                <h3>案例1：电商系统压力测试生成</h3>
+                <div class="case-steps">
+                    <div class="step">
+                        <div class="step-header">步骤1：定义测试目标</div>
+                        <pre><code>// 输入提示
+生成JMeter压力测试脚本，模拟以下场景：
+- 500并发用户持续10分钟
+- 登录→浏览商品→加入购物车→下单流程
+- 思考时间3-5秒随机
+- 包含JSON断言检查响应结构</code></pre>
                     </div>
-                    <div class="metric">
-                        <div class="value">2.5x</div>
-                        <div class="label">效率提升</div>
+                    
+                    <div class="step">
+                        <div class="step-header">步骤2：生成测试脚本</div>
+                        <div class="code-sample">
+                            <pre><code>&lt;TestPlan&gt;
+  &lt;ThreadGroup&gt;
+    &lt;num_threads&gt;500&lt;/num_threads&gt;
+    &lt;ramp_time&gt;300&lt;/ramp_time&gt;
+    &lt;HTTPSampler&gt;
+      &lt;path&gt;/api/login&lt;/path&gt;
+      &lt;PostProcessor&gt;
+        &lt;JSON Extractor variable="token"&gt;$.access_token&lt;/JSON&gt;
+      &lt;/PostProcessor&gt;
+    &lt;/HTTPSampler&gt;
+    &lt;RandomTimer&gt;
+      &lt;range&gt;3000-5000&lt;/range&gt;
+    &lt;/RandomTimer&gt;
+  &lt;/ThreadGroup&gt;
+&lt;/TestPlan&gt;</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-header">步骤3：结果验证</div>
+                        <div class="metrics">
+                            <div class="metric">
+                                <div class="value">98%</div>
+                                <div class="label">请求成功率</div>
+                            </div>
+                            <div class="metric">
+                                <div class="value">2.3s</div>
+                                <div class="label">平均响应时间</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </article>
+
+            <!-- 案例2：微服务API生成 -->
+            <article class="case-study">
+                <h3>案例2：用户管理微服务生成</h3>
+                <div class="case-flow">
+                    <div class="flow-step">
+                        <div class="node">输入需求</div>
+                        <div class="arrow">↓</div>
+                        <pre class="prompt-example">生成基于Spring Boot的用户管理服务，包含：
+- JWT身份验证
+- MySQL数据库集成
+- 分页查询接口
+- 文件上传功能
+使用Lombok简化代码</pre>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="node">生成结果</div>
+                        <div class="cluster">
+                            <div class="node">UserController.java</div>
+                            <div class="node">UserService.java</div>
+                            <div class="node">JwtFilter.java</div>
+                            <div class="node">application.yml</div>
+                        </div>
+                    </div>
+
+                    <div class="code-highlight">
+                        <pre><code>// UserController.java 示例
+@PostMapping("/login")
+public ResponseEntity&lt;String&gt; login(@RequestBody LoginDTO dto) {
+    User user = userService.authenticate(dto);
+    String token = jwtUtil.generateToken(user);
+    return ResponseEntity.ok(token);
+}</code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 案例3：智能文档生成 -->
+            <article class="case-study">
+                <h3>案例3：API文档自动生成</h3>
+                <div class="case-process">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>代码解析</h4>
+                            <p>分析Controller层代码结构，提取：</p>
+                            <ul>
+                                <li>接口路径</li>
+                                <li>请求方法</li>
+                                <li>参数说明</li>
+                                <li>响应模型</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>文档生成</h4>
+                            <div class="doc-example">
+                                <table>
+                                    <tr><th>接口</th><td>/api/users</td></tr>
+                                    <tr><th>方法</th><td>GET</td></tr>
+                                    <tr><th>参数</th><td>page=1, size=20</td></tr>
+                                    <tr><th>响应示例</th><td>{data: [], total: 100}</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>持续同步</h4>
+                            <pre><code># Git Hook配置示例
+pre-commit:
+  - aigc doc-update --source src/ --output docs/</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </article>
         </section>
 
         <section id="security" class="section">
